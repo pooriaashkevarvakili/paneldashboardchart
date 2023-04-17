@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "@kevinmarrec/nuxt-pwa": "^0.17.0",
+    "@mdi/font": "^7.2.96",
+    "apexcharts": "^3.38.0",
+    "flag-icons": "^6.6.6",
+    "sass": "^1.62.0",
+    "vite-plugin-vuetify": "^1.0.2",
+    "vue-flag-icon": "^2.1.0",
+    "vue-i18n": "^9.2.2",
+    "vue3-apexcharts": "^1.4.1",
+    "vuetify": "^3.1.4"
+  }
+}
