@@ -31,12 +31,18 @@
                         <gradientDonut />
                     </v-card>
                 </v-col>
+                <v-col cols="12" lg="4" xs="12" md="12" sm="12">
+                    <v-card style="border-radius: 20px;" min-height="430" class="mt-xs-2">
+                        <donutPattern />
+                    </v-card>
+                </v-col>
             </v-row>
 
         </v-app>
     </client-only>
 </template>
 <script setup>
+import donutPattern from "../components/apexCharts/donut,pie/donutPattern.vue"
 import gradientDonut from "~~/components/apexCharts/donut,pie/gradientDonut.vue";
 import { useTheme } from "vuetify";
 import MonochromePie from "../components/apexCharts/donut,pie/MonochromePie.vue";
