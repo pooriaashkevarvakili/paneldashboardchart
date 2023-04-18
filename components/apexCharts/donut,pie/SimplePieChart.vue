@@ -1,6 +1,6 @@
 <template>
     <div dir="auto">
-        <div class="pa-md-4">{{ $t('SimplePieChart') }}</div>
+        <v-sheet class="ma-4 pa-2">{{ $t('SimplePieChart') }}</v-sheet>
         <apexchart class="pa-md-4" type="pie" width="380" :options="{
 
             chart: {

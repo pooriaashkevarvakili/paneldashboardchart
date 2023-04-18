@@ -1,7 +1,7 @@
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { en, zhHans } from 'vuetify/locale'
+
 
 // Your own translation file
 
@@ -18,6 +18,13 @@ const myCustomLightTheme = {
         info: '#2196F3',
         success: '#4CAF50',
         warning: '#FB8C00',
+        something: '#00ff00',
+
+
+
+
+
+
     }
 }
 export default defineNuxtPlugin(nuxtApp => {

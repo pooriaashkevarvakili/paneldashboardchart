@@ -1,19 +1,19 @@
 <template>
     <div dir="auto">
-        <div class="pa-md-4">{{ $t('updateDonut') }}</div>
+        <v-sheet class="ma-2 pa-2">{{ $t('updateDonut') }}</v-sheet>
         <div class="chart-wrap">
             <div id="chart">
                 <apexchart class="pa-md-4" type="donut" width="320" :options="chartOptions" :series="series"></apexchart>
             </div>
         </div>
-        <div class="pa-md-4">
+        <div class="text-center  pa-sm-2">
             <v-row>
                 <v-col>
-                    <v-btn icon="mdi-plus" class="bg-purple-darken-2  pa-md-sm" @click="appendData">
+                    <v-btn icon="mdi-plus" class="bg-purple-darken-2  " @click="appendData">
                     </v-btn>
-                    <v-btn icon="mdi-minus" style="margin-left:10px" class="bg-purple-darken-2 " @click="removeData">
+                    <v-btn icon="mdi-minus" class="bg-purple-darken-2 ma-1 " @click="removeData">
                     </v-btn>
-                    <v-btn icon="mdi-redo" style="margin-left:10px" class="bg-purple-darken-2" @click="reset()"></v-btn>
+                    <v-btn icon="mdi-redo" class="bg-purple-darken-2 ma-1 " @click="reset()"></v-btn>
                 </v-col>
             </v-row>
         </div>

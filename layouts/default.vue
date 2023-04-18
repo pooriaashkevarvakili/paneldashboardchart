@@ -6,10 +6,10 @@
 
                 <v-app-bar color="primary" prominent>
 
-                    <!-- <v-btn style="margin-top:-10px" @click="toggleTheme">
+                    <v-btn style="margin-top:-10px" @click="toggleTheme">
                         <v-switch v-model="model" hide-details inset></v-switch>
 
-                    </v-btn> -->
+                    </v-btn>
 
                     <div class="text-center">
                         <v-menu open-on-hover>
@@ -44,24 +44,30 @@
 
                 </v-app-bar>
 
-                <v-navigation-drawer v-model="drawer" location="top" temporary>
-                    <v-list>
-                        <v-list-item dir="auto" href="/">
-                            {{ $t('ApexChartsDonut') }}
-                        </v-list-item>
-                        <v-list-item dir="auto" href="/googleChart">
-                            {{ $t('GoogleCharts') }}
-                        </v-list-item>
-                        <v-list-item dir="auto" href="/fushionCharts">
-                            {{ $t('fushionCharts') }}
-                        </v-list-item>
-                        <v-list-item dir="auto" href="/jsCharting">
-                            {{ $t('jsCharting') }}
-                        </v-list-item>
-                        <v-list-item dir="auto" href="/vueCharts">
-                            {{ $t('vueChart') }}
-                        </v-list-item>
-                    </v-list>
+                <v-navigation-drawer v-model="drawer" location="right" temporary>
+                    <div dir="auto">
+
+                        <v-list>
+
+
+                            <v-list-item dir="auto" href="/">
+                                {{ $t('ApexCharts') }}
+                            </v-list-item>
+                            <v-list-item dir="auto" href="/googleChart">
+                                {{ $t('GoogleCharts') }}
+                            </v-list-item>
+                            <v-list-item dir="auto" href="/fushionCharts">
+                                {{ $t('fushionCharts') }}
+                            </v-list-item>
+                            <v-list-item dir="auto" href="/jsCharting">
+                                {{ $t('jsCharting') }}
+                            </v-list-item>
+                            <v-list-item dir="auto" href="/vueCharts">
+                                {{ $t('vueChart') }}
+                            </v-list-item>
+                        </v-list>
+                    </div>
+
                 </v-navigation-drawer>
 
                 <v-main>
@@ -78,15 +84,26 @@
 import { ref, watch } from 'vue'
 import { useTheme, } from 'vuetify'
 import i18n from '~~/plugins/i18n'
-
+import { useDark, useToggle } from "@vueuse/core"
 const fav = ref(true)
 const menu = ref(false)
 const model = ref(true)
+const open = ref(['Users'])
 const message = ref(false)
 const hints = ref(true)
 const drawer = ref(false)
 const group = ref(null)
 const theme = useTheme()
+const admins = [
+    ['Management', 'mdi-account-multiple-outline'],
+    ['Settings', 'mdi-cog-outline'],
+]
+const cruds = [
+    ['Create', 'mdi-plus-outline'],
+    ['Read', 'mdi-file-outline'],
+    ['Update', 'mdi-update'],
+    ['Delete', 'mdi-delete'],
+]
 watch(group, async () => {
     drawer.value = false
 
