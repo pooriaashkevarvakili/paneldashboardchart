@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "nuxt": "3.1.0"
   },
   "dependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.17.0",
@@ -18,6 +18,7 @@
     "apexcharts": "^3.38.0",
     "flag-icons": "^6.6.6",
     "sass": "^1.62.0",
+    "vite": "4.2.2",
     "vite-plugin-vuetify": "^1.0.2",
     "vue-flag-icon": "^2.1.0",
     "vue-i18n": "^9.2.2",

@@ -1,5 +1,14 @@
 <template>
-    <apexchart type="line" height="300" :options="chartOptions" :series="series"></apexchart>
+    <div dir="auto">
+        <v-sheet class="ma-4 pa-2">
+            {{ $t('datatable') }}
+        </v-sheet>
+    </div>
+    <apexchart type="line" height="300" :options="{
+        xaxis: {
+            categories: [$t('Jan'), $t('feb'), $t('Mar'), $t('Apr'), $t('May'), $t('Jun'), $t('Jul'), $t('Aug'), $t('Sep')]
+        },
+    }" :series="series"></apexchart>
 </template>
 
 <script setup>
@@ -17,6 +26,10 @@ const chartOptions = {
     chart: {
         height: 350,
         type: 'line',
+        zoom: {
+            enabled: false
+        },
+        fontFamily: 'IRANSans',
         dropShadow: {
             enabled: true,
             color: '#000',
@@ -36,10 +49,7 @@ const chartOptions = {
     stroke: {
         curve: 'smooth'
     },
-    title: {
-        text: 'Average High & Low Temperature',
-        align: 'left'
-    },
+
     grid: {
         borderColor: '#e7e7e7',
         row: {
@@ -55,9 +65,7 @@ const chartOptions = {
 
     },
     yaxis: {
-        title: {
-            text: 'Temperature'
-        },
+
         min: 5,
         max: 40
     },

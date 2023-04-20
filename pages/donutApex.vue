@@ -47,8 +47,8 @@
 </template>
 <script setup>
 import donutPattern from "../components/apexCharts/donut,pie/donutPattern.vue"
-import gradientDonut from "~~/components/apexCharts/donut,pie/gradientDonut.vue";
-import { useTheme } from "vuetify";
+import gradientDonut from "../components/apexCharts/donut,pie/gradientDonut.vue";
+
 import MonochromePie from "../components/apexCharts/donut,pie/MonochromePie.vue";
 import donut from "../components/apexCharts/donut,pie/donut.vue"
 import SimplePieChartVue from "../components/apexCharts/donut,pie/SimplePieChart.vue";

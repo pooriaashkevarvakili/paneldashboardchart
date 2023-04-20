@@ -6,12 +6,23 @@
 
                 <v-app-bar color="primary" prominent>
 
-                    <v-btn style="margin-top:-10px" @click="toggleTheme">
-                        <v-switch v-model="model" hide-details inset></v-switch>
+                    <div style="cursor: pointer;margin-top: 10px;padding:10px" @click="toggleTheme">
+                        <svg v-if="theme.global.current.value.dark" style="width:35px;height:35px"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                        </svg>
+                        <svg v-else style="width:35px;height:35px" xmlns="http://www.w3.org/2000/svg" fill="#fff"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                        </svg>
 
-                    </v-btn>
 
-                    <div class="text-center">
+                    </div>
+
+                    <div>
                         <v-menu open-on-hover>
                             <template v-slot:activator="{ props }">
                                 <v-btn @click="$i18n.locale = 'en'" color="secondary" v-bind="props">
@@ -43,9 +54,9 @@
                     </div>
 
                 </v-app-bar>
+                <div dir="auto">
+                    <v-navigation-drawer color="teal-darken-1" v-model="drawer" location="right" temporary>
 
-                <v-navigation-drawer v-model="drawer" location="right" temporary>
-                    <div dir="auto">
 
                         <v-list>
 
@@ -66,10 +77,10 @@
                                 {{ $t('vueChart') }}
                             </v-list-item>
                         </v-list>
-                    </div>
 
-                </v-navigation-drawer>
 
+                    </v-navigation-drawer>
+                </div>
                 <v-main>
                     <slot />
                 </v-main>
@@ -94,16 +105,7 @@ const hints = ref(true)
 const drawer = ref(false)
 const group = ref(null)
 const theme = useTheme()
-const admins = [
-    ['Management', 'mdi-account-multiple-outline'],
-    ['Settings', 'mdi-cog-outline'],
-]
-const cruds = [
-    ['Create', 'mdi-plus-outline'],
-    ['Read', 'mdi-file-outline'],
-    ['Update', 'mdi-update'],
-    ['Delete', 'mdi-delete'],
-]
+
 watch(group, async () => {
     drawer.value = false
 
