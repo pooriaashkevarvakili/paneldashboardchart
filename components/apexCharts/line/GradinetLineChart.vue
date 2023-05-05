@@ -22,7 +22,14 @@ const chartOptions = {
     chart: {
         height: 350,
         type: 'line',
-        fontFamily: 'IRANSans'
+        fontFamily: 'IRANSans',
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
+
     },
     forecastDataPoints: {
         count: 7

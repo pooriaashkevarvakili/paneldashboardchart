@@ -183,7 +183,13 @@ const chartOptions = {
     chart: {
         type: 'area',
         height: 350,
-        fontFamily: "IRAnsans"
+        fontFamily: "IRAnsans",
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     dataLabels: {
         enabled: false

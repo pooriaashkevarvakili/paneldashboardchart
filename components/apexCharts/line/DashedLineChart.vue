@@ -33,6 +33,12 @@ const chartOptions = {
         zoom: {
             enabled: false
         },
+        toolbar: {
+            show: true,
+            tools: {
+                download: false
+            }
+        }
     },
     dataLabels: {
         enabled: false

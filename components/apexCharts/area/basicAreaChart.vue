@@ -26,7 +26,13 @@ const chartOptions = {
     chart: {
         height: 350,
         type: 'area',
-        fontFamily: 'IRAnsans'
+        fontFamily: 'IRAnsans',
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     dataLabels: {
         enabled: false

@@ -19,7 +19,13 @@ const chartOptions = {
     chart: {
         type: 'line',
         height: 350,
-        fontFamily: 'IRANSans'
+        fontFamily: 'IRANSans',
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     stroke: {
         curve: 'stepline',

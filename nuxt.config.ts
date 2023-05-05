@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     ],
     plugins: [
         { src: '@/plugins/i18n.ts', ssr: false },
-        { src: '@/plugins/vue-flag-icon.ts' },
+
         { src: '@/plugins/apexCharts.client.ts', mode: 'client' }
     ],
     build: {

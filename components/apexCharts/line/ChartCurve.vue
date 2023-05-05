@@ -28,6 +28,11 @@ const chartOptions = {
         type: 'line',
         zoom: {
             enabled: false
+        }, toolbar: {
+            show: true,
+            tools: {
+                download: false
+            }
         },
         animations: {
             enabled: false

@@ -6,7 +6,7 @@
 
                 <v-app-bar color="primary" prominent>
 
-                    <div style="cursor: pointer;margin-top: 10px;padding:10px" @click="toggleTheme">
+                    <div class="mt-2 pa-3" style="cursor: pointer" @click="toggleTheme">
                         <svg v-if="theme.global.current.value.dark" style="width:35px;height:35px"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor">
@@ -55,31 +55,38 @@
 
                 </v-app-bar>
                 <div dir="auto">
-                    <v-navigation-drawer color="teal-darken-1" v-model="drawer" location="right" temporary>
+                    <div>
+                        <v-locale-provider>
+                            <v-navigation-drawer location="top" color="teal-darken-1" v-model="drawer" temporary>
 
 
-                        <v-list>
+                                <v-list>
 
 
-                            <v-list-item dir="auto" href="/">
-                                {{ $t('ApexCharts') }}
-                            </v-list-item>
-                            <v-list-item dir="auto" href="/googleChart">
-                                {{ $t('GoogleCharts') }}
-                            </v-list-item>
-                            <v-list-item dir="auto" href="/fushionCharts">
-                                {{ $t('fushionCharts') }}
-                            </v-list-item>
-                            <v-list-item dir="auto" href="/jsCharting">
-                                {{ $t('jsCharting') }}
-                            </v-list-item>
-                            <v-list-item dir="auto" href="/vueCharts">
-                                {{ $t('vueChart') }}
-                            </v-list-item>
-                        </v-list>
+                                    <v-list-item dir="auto" href="/">
+                                        {{ $t('ApexCharts') }}
+                                    </v-list-item>
+                                    <v-list-item dir="auto" href="/googleChart">
+                                        {{ $t('GoogleCharts') }}
+                                    </v-list-item>
+                                    <v-list-item dir="auto" href="/fushionCharts">
+                                        {{ $t('fushionCharts') }}
+                                    </v-list-item>
+                                    <v-list-item dir="auto" href="/jsCharting">
+                                        {{ $t('jsCharting') }}
+                                    </v-list-item>
+                                    <v-list-item dir="auto" href="/vueCharts">
+                                        {{ $t('vueChart') }}
+                                    </v-list-item>
+                                </v-list>
 
 
-                    </v-navigation-drawer>
+                            </v-navigation-drawer>
+                        </v-locale-provider>
+
+                    </div>
+
+
                 </div>
                 <v-main>
                     <slot />
@@ -93,9 +100,9 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { useTheme, } from 'vuetify'
+import { useTheme, useLocale } from 'vuetify'
 import i18n from '~~/plugins/i18n'
-import { useDark, useToggle } from "@vueuse/core"
+
 const fav = ref(true)
 const menu = ref(false)
 const model = ref(true)
@@ -105,11 +112,14 @@ const hints = ref(true)
 const drawer = ref(false)
 const group = ref(null)
 const theme = useTheme()
-
+const { t } = useLocale()
+const { current } = useLocale()
 watch(group, async () => {
     drawer.value = false
 
 })
+const changeLocale = locale => current.value = locale
+
 const items = [
     {
         title: 'ApexChart',

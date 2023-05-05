@@ -323,7 +323,13 @@ const chartOptions = {
         height: 350,
         zoom: {
             autoScaleYaxis: true
-        }
+        },
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     annotations: {
         yaxis: [{

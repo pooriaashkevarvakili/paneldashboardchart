@@ -23,7 +23,13 @@ const chartOptions = {
         type: 'line',
         height: 160,
 
-        colors: ['#008FFB']
+        colors: ['#008FFB'],
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     }
 }
 const seriesLine2 = [{
@@ -37,7 +43,13 @@ const chartOptionsLine2 = {
         id: 'tw',
         group: 'social',
         type: 'line',
-        height: 160
+        height: 160,
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     colors: ['#546E7A']
 }
@@ -52,7 +64,13 @@ const chartOptionsArea = {
         id: 'yt',
         group: 'social',
         type: 'area',
-        height: 160
+        height: 160,
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     colors: ['#00E396']
 }
@@ -69,7 +87,13 @@ const chartOptionsSmall = {
         group: 'social',
         type: 'area',
         height: 160,
-        width: 300
+        width: 300,
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     colors: ['#008FFB']
 }
@@ -86,7 +110,13 @@ const chartOptionsSmall2 = {
         group: 'social',
         type: 'area',
         height: 160,
-        width: 300
+        width: 300,
+        toolbar: {
+            show: false,
+            tools: {
+                download: false
+            }
+        },
     },
     colors: ['#546E7A']
 }

@@ -11,6 +11,11 @@
                     fontFamily: 'IRANSans',
                     zoom: {
                         enabled: false
+                    }, toolbar: {
+                        show: true,
+                        tools: {
+                            download: false
+                        }
                     }
                 },
                 dataLabels: {
